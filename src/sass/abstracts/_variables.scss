@@ -1,0 +1,23 @@
+// Breakpoints
+$bp-small: 48em;
+$bp-medium: 64em;
+$bp-large: 85.375em;
+
+// Media Queries
+$mq-small: 'screen and (min-width: #{$bp-small})';
+$mq-medium: 'screen and (min-width: #{$bp-medium})';
+$mq-large: 'screen and (min-width: #{$bp-large})';
+
+// Colors
+$primary-color: hsl(220, 98%, 61%);
+$very-dark-blue: hsl(235, 21%, 11%);
+$very-dark-desaturated-blue: hsl(235, 24%, 19%);
+$light-grayish-blue: hsl(234, 39%, 85%);
+$lighter-grayish-blue: hsl(236, 33%, 92%);
+$dark-grayish-blue: hsl(234, 11%, 52%);
+$dark-grayish-blue: hsl(233, 14%, 35%);
+$very-dark-grayish-blue: hsl(237, 14%, 26%);
+
+// Gradient
+$gradient: linear-gradient(to bottom, hsl(192, 100%, 67%), hsl(280, 87%, 65%))
+  no-repeat;
