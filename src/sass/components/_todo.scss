@@ -1,0 +1,24 @@
+.todo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $very-dark-desaturated-blue;
+  height: 4.8rem;
+
+  &__list {
+    background-color: $very-dark-desaturated-blue;
+    border-radius: $radius;
+    overflow: hidden;
+
+    .todo {
+      &:not(:last-child) {
+        border-bottom: 1px solid $dark-grayish-blue;
+      }
+    }
+  }
+
+  &__add {
+    margin-bottom: 1.6rem;
+    border-radius: $radius;
+  }
+}
