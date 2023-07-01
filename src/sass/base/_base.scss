@@ -35,9 +35,9 @@ body {
 }
 
 body {
-  background-image: url(../../../public/images/bg-desktop-dark.jpg);
+  background-image: url(../../../public/images/bg-mobile-dark.jpg);
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: auto;
   background-color: $very-dark-blue;
   color: $lighter-grayish-blue;
   margin: 0;
