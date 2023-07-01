@@ -1,3 +1,39 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  // This defines what 1rem is.
+  font-size: 62.5%; // 1rem = 10px;
+  font-style: normal;
+  font-weight: normal;
+}
+
+html,
+body {
+  margin: 0px auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+}
+
+.sr-only {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
 body {
   background-image: url(../../../public/images/bg-desktop-dark.jpg);
   background-repeat: no-repeat;
@@ -10,9 +46,4 @@ body {
     'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
 }
