@@ -37,7 +37,8 @@ body {
 body {
   background-image: url(../../../public/images/bg-mobile-dark.jpg);
   background-repeat: no-repeat;
-  background-size: auto;
+  background-size: contain;
+  background-position: top center;
   background-color: $very-dark-blue;
   color: $lighter-grayish-blue;
   margin: 0;
@@ -46,4 +47,8 @@ body {
     'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  @media #{$mq-medium} {
+    background-image: url(../../../public/images/bg-desktop-dark.jpg);
+  }
 }
