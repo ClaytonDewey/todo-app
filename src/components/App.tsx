@@ -1,5 +1,6 @@
 import AddTodo from './AddTodo';
 import Header from './Header';
+import TodoFooter from './TodoFooter';
 import TodoList from './TodoList';
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
       <Header />
       <AddTodo />
       <TodoList />
+      <TodoFooter />
     </div>
   );
 }
