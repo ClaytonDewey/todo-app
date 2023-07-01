@@ -1,0 +1,11 @@
+.footer {
+  &-todo {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: $very-dark-desaturated-blue;
+    height: 4.8rem;
+    border-radius: $radius;
+    margin-top: 1.6rem;
+  }
+}
