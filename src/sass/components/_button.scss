@@ -1,0 +1,14 @@
+.btn {
+  cursor: pointer;
+
+  &-text {
+    font-weight: 700;
+    border: none;
+    background-color: transparent;
+    color: $dark-grayish-blue;
+
+    &.active {
+      color: $primary-color;
+    }
+  }
+}
