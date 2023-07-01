@@ -1,9 +1,12 @@
+import AddTodo from './AddTodo';
+import Header from './Header';
 import TodoList from './TodoList';
 
 function App() {
   return (
     <div className='container'>
-      <h1>Todo</h1>
+      <Header />
+      <AddTodo />
       <TodoList />
     </div>
   );
