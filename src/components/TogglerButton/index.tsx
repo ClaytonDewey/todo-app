@@ -1,5 +1,4 @@
-import { HiMoon } from 'react-icons/hi';
-import { FaSun } from 'react-icons/fa';
+import { IconMoon, IconSun } from '../icons';
 
 import * as S from './styles';
 
@@ -21,11 +20,11 @@ function TogglerButton({ themeToggler }: ThemeTogglerProps) {
         <S.Icons className='slider round'>
           {window.localStorage.getItem('theme') !== 'light' ? (
             <>
-              <HiMoon style={{ marginLeft: '6.3px', height: '10px' }} />
+              <IconMoon />
             </>
           ) : (
             <>
-              <FaSun size={0} style={{ marginLeft: '41px', height: '10px' }} />
+              <IconSun />
             </>
           )}
         </S.Icons>
