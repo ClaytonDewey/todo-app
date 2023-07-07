@@ -1,7 +1,7 @@
-// import AddTodo from './AddTodo';
-// import Header from './Header';
-// import TodoFooter from './TodoFooter';
-// import TodoList from './TodoList';
+import AddTodo from './AddTodo';
+import Header from './Header';
+import TodoFooter from './TodoFooter';
+import TodoList from './TodoList';
 
 // function App() {
 //   return (
@@ -30,13 +30,17 @@ function App() {
     <ThemeContext>
       <ThemeProvider theme={themeMode}>
         <GlobalStyle />
-        <header>
-          <TogglerButton themeToggler={themeToggler} />
-        </header>
-        <h1>{theme}</h1>
+        <div className='container'>
+          <Header />
+            <TogglerButton themeToggler={themeToggler} />
+          <AddTodo />
+          <TodoList />
+          <TodoFooter />
+        </div>
       </ThemeProvider>
     </ThemeContext>
   );
 }
 
 export default App;
+
