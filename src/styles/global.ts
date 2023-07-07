@@ -30,6 +30,7 @@ const globalStyle = createGlobalStyle`
     width: 50vw;
     margin: 0 auto;
     background-color: ${({ theme }: GlobalThemeProps) => theme.background};
+    background-image: url(${({ theme }: GlobalThemeProps) => theme.backgroundImage});
     display: flex;
     justify-content: center;
     align-items: center;
