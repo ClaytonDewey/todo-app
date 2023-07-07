@@ -25,15 +25,17 @@ const globalStyle = createGlobalStyle`
   }
 
   body  {
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: top center;
+    margin: 0;
+    font-family: 'Josefin Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+      'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+      'Helvetica Neue', sans-serif;
     -webkit-font-smoothing: antialiased;
-    height: 100vh;
-    width: 50vw;
-    margin: 0 auto;
+    -moz-osx-font-smoothing: grayscale;
     background-color: ${({ theme }: GlobalThemeProps) => theme.background};
-    background-image: url(${({ theme }: GlobalThemeProps) => theme.backgroundImage});
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background-image: url(${({ theme }: GlobalThemeProps) => (theme.backgroundImage)});
   }
 
   h1 {
