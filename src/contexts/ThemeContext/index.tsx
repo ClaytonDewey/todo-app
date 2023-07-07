@@ -4,10 +4,10 @@ import { useThemeMode } from '../../hooks/useThemeMode';
 import { lightTheme, darkTheme } from '../../styles/themes';
 
 interface Props {
-  children: React.ReactNode;
+  children: JSX.Element;
 }
 
-const ThemeContext: React.FC = ({ children }: Props) => {
+const ThemeContext = ({ children }: Props): JSX.Element => {
   const { theme } = useThemeMode();
 
   const themeMode = theme === 'dark' ? darkTheme : lightTheme;
