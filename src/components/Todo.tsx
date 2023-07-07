@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from './Button';
+import cross from '../images/icon-cross.svg';
 
 type TodoProps = {};
 
@@ -16,7 +17,7 @@ const Todo: React.FC<TodoProps> = () => {
         <img
           role='presentation'
           alt='delete'
-          src='../../public/images/icon-cross.svg'
+          src={cross}
         />
       </Button>
     </div>
