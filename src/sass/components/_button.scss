@@ -1,10 +1,10 @@
 .btn {
   cursor: pointer;
+  background-color: transparent;
+  border: none;
 
   &-text {
     font-weight: 700;
-    border: none;
-    background-color: transparent;
     color: $dark-grayish-blue;
 
     &.active {
