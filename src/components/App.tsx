@@ -31,8 +31,9 @@ function App() {
       <ThemeProvider theme={themeMode}>
         <GlobalStyle />
         <div className='container'>
-          <Header />
+          <Header>
             <TogglerButton themeToggler={themeToggler} />
+          </Header>
           <AddTodo />
           <TodoList />
           <TodoFooter />
