@@ -9,10 +9,10 @@ const globalStyle = createGlobalStyle`
   :root {
     //dark-mode
     --dark-background: #1A1B27;
-    --dark-text: #F5F5F7;
+    --dark-text: hsl(0, 0%, 98%);
 
     //light-mode
-    --light-background: #f2f2f2;
+    --light-background: hsl(0, 0%, 98%);
     --light-text: #2E0509;
 
   }
@@ -35,7 +35,7 @@ const globalStyle = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background-color: ${({ theme }: GlobalThemeProps) => theme.background};
-    background-image: url(${({ theme }: GlobalThemeProps) => (theme.backgroundImage)});
+    background-image: url(${({ theme }: GlobalThemeProps) => theme.backgroundImage});
   }
 
   h1 {
