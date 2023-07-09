@@ -7,8 +7,25 @@ type GlobalThemeProps = {
 
 const globalStyle = createGlobalStyle`
   :root {
+    --primary-color: hsl(220, 98%, 61%);
+    --light: hsl(0, 0%, 98%);
+    --very-dark-blue: hsl(235, 21%, 11%);
+    --very-dark-desaturated-blue: hsl(235, 24%, 19%);
+    --light-grayish-blue: hsl(234, 39%, 85%);
+    --lighter-grayish-blue: hsl(236, 33%, 92%);
+    --dark-grayish-blue: hsl(234, 11%, 52%);
+    --darker-grayish-blue: hsl(233, 14%, 35%);
+    --very-dark-grayish-blue: hsl(237, 14%, 26%);
+
+    // Gradient
+    --gradient: linear-gradient(-225deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%))
+      no-repeat;
+
+    // Borders
+    --radius: 4px;
+
     //dark-mode
-    --dark-background: #1A1B27;
+    --dark-background: hsl(235, 21%, 11%);
     --dark-text: hsl(0, 0%, 98%);
 
     //light-mode
