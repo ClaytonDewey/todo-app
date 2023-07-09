@@ -5,9 +5,22 @@
 @import 'base/typography';
 @import 'base/utilities';
 
-@import 'components/button';
-@import 'components/checkbox';
 @import 'components/footer';
 @import 'components/todo';
 
 @import 'layout/container';
+
+.btn {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+
+  &-text {
+    font-weight: 700;
+    color: $dark-grayish-blue;
+
+    &.active {
+      color: $primary-color;
+    }
+  }
+}
