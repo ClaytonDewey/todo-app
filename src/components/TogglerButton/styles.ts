@@ -9,8 +9,4 @@ export const Icons = styled.button`
   background-color: transparent;
   border: none;
 
-  svg {
-    color: ${({ theme }) => theme.text};
-    z-index: 11;
-  }
 `;
