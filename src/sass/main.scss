@@ -1,15 +1,3 @@
-@import 'abstracts/reset';
-@import 'abstracts/variables';
-
-@import 'base/base';
-@import 'base/typography';
-@import 'base/utilities';
-
-@import 'components/footer';
-@import 'components/todo';
-
-@import 'layout/container';
-
 .btn {
   cursor: pointer;
   background-color: transparent;
@@ -17,10 +5,10 @@
 
   &-text {
     font-weight: 700;
-    color: $dark-grayish-blue;
+    color: hsl(234, 11%, 52%);
 
     &.active {
-      color: $primary-color;
+      color: hsl(220, 98%, 61%);
     }
   }
 }
