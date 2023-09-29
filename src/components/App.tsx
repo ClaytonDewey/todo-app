@@ -1,7 +1,7 @@
 import { ThemeProvider } from 'styled-components';
 import TogglerButton from './TogglerButton';
 import GlobalStyle from '../styles/global';
-import ThemeContext from '../contexts/ThemeContext';
+import ThemeContext from '../context/ThemeContext';
 import { lightTheme, darkTheme } from '../styles/themes';
 import useThemeMode from '../hooks/useThemeMode';
 import AddTodo from './AddTodo';
