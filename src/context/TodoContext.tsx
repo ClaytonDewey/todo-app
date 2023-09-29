@@ -8,6 +8,7 @@ interface TodoContextProps {
   deleteTodo: (id: string) => void;
   editTodo: (id: string, text: string) => void;
   updateTodoStatus: (id: string) => void;
+  deleteCompletedTodos: (id: string[]) => void;
 }
 
 export interface Todo {
@@ -17,7 +18,7 @@ export interface Todo {
 }
 
 export const TodoContext = createContext<TodoContextProps | undefined>(
-  undefined,
+  undefined
 );
 
 export const TodoProvider = (props: { children: React.ReactNode }) => {
@@ -36,13 +37,18 @@ export const TodoProvider = (props: { children: React.ReactNode }) => {
 
   // ::: DELETE A TODO :::
   const deleteTodo = (id: string) => {
-    setTodos(prevTodos => prevTodos.filter(todo => todo.id !== id));
+    setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== id));
+  };
+
+  // ::: DELETE COMPLETED TODOS :::
+  const deleteCompletedTodos = (id: string[]) => {
+    //
   };
 
   // ::: EDIT A TODO :::
   const editTodo = (id: string, text: string) => {
-    setTodos(prevTodos => {
-      return prevTodos.map(todo => {
+    setTodos((prevTodos) => {
+      return prevTodos.map((todo) => {
         if (todo.id === id) {
           return { ...todo, text };
         }
@@ -53,8 +59,8 @@ export const TodoProvider = (props: { children: React.ReactNode }) => {
 
   // ::: UPDATE A TODO :::
   const updateTodoStatus = (id: string) => {
-    setTodos(prevTodos => {
-      return prevTodos.map(todo => {
+    setTodos((prevTodos) => {
+      return prevTodos.map((todo) => {
         if (todo.id === id) {
           return {
             ...todo,
@@ -72,6 +78,7 @@ export const TodoProvider = (props: { children: React.ReactNode }) => {
     deleteTodo,
     editTodo,
     updateTodoStatus,
+    deleteCompletedTodos,
   };
 
   return (
