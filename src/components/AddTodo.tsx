@@ -3,7 +3,7 @@ import { toast } from 'react-hot-toast';
 import { useTodo } from '../context';
 import { Input } from './Input';
 
-const AddTodo = () => {
+export const AddTodo = () => {
   const [input, setInput] = useState<string>('');
   const inputRef = useRef<HTMLInputElement>(null);
   const { addTodo } = useTodo();
@@ -47,5 +47,3 @@ const AddTodo = () => {
     </form>
   )
 }
-
-export default AddTodo;
