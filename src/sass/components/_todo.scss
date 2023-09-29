@@ -18,6 +18,10 @@
     }
   }
 
+  &__empty {
+    justify-content: center;
+  }
+
   &__add {
     margin-bottom: 1.6rem;
     border-radius: $radius;
