@@ -3,6 +3,7 @@ import { useTodo } from '../context';
 import Button from './Button';
 import styled from 'styled-components';
 import { toast } from 'react-hot-toast';
+import { useState } from 'react';
 
 const StyledFooter = styled.footer`
   &.todo__footer {
@@ -26,18 +27,10 @@ const StyledFooter = styled.footer`
 
 export const TodoList = () => {
   const { todos } = useTodo();
-
-  const showAllTodos = () => {
-    toast.success('This will display all todos');
-  };
-
-  const showActiveTodos = () => {
-    toast.success('This will dispay active todos');
-  };
-
-  const showCompletedTodos = () => {
-    toast.success('This will show completed todos');
-  };
+  const [display, setDisplay] = useState<string>('all');
+  const activeItemsCount = todos.filter((todo) => {
+    return todo.status === 'undone';
+  }).length;
 
   const deleteCompletedTodos = () => {
     toast.success('This will delete completed todos');
@@ -54,21 +47,49 @@ export const TodoList = () => {
   }
   return (
     <div className='todo__list'>
-      {todos.map((todo) => (
-        <TodoItem todo={todo} key={todo.id} />
-      ))}
+      {display === 'all' && (
+        <>
+          {todos.map((todo) => (
+            <TodoItem todo={todo} key={todo.id} />
+          ))}
+        </>
+      )}
+      {display === 'active' && (
+        <>
+          {todos
+            .filter((todo) => todo.status === 'undone')
+            .map((todo) => {
+              return <TodoItem todo={todo} key={todo.id} />;
+            })}
+        </>
+      )}
+      {display === 'done' && (
+        <>
+          {todos
+            .filter((todo) => todo.status === 'completed')
+            .map((todo) => {
+              return <TodoItem todo={todo} key={todo.id} />;
+            })}
+        </>
+      )}
+      {display === 'done' && <p style={{ color: 'white' }}>Show completed</p>}
+
       <StyledFooter className='todo todo__footer'>
-        <span className='todo__count'>5 items left</span>
+        <span className='todo__count'>{activeItemsCount} items left</span>
         <div className='todo__toggle-container'>
           <Button
-            className='btn btn-text active'
-            onClick={() => showAllTodos()}>
+            className={`btn btn-text ${display === 'all' ? 'active' : ''}`}
+            onClick={() => setDisplay('all')}>
             All
           </Button>
-          <Button className='btn btn-text' onClick={() => showActiveTodos()}>
+          <Button
+            className={`btn btn-text ${display === 'active' ? 'active' : ''}`}
+            onClick={() => setDisplay('active')}>
             Active
           </Button>
-          <Button className='btn btn-text' onClick={() => showCompletedTodos()}>
+          <Button
+            className={`btn btn-text ${display === 'done' ? 'active' : ''}`}
+            onClick={() => setDisplay('done')}>
             Completed
           </Button>
         </div>
