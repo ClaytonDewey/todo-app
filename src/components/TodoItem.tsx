@@ -39,7 +39,7 @@ const StyledCheckbox = styled.label`
   }
 `;
 
-const Todo: React.FC<TodoProps> = () => {
+export const TodoItem: React.FC<TodoProps> = () => {
   return (
     <div className='todo'>
       <StyledCheckbox htmlFor=''>
@@ -58,4 +58,4 @@ const Todo: React.FC<TodoProps> = () => {
     </div>
   );
 };
-export default Todo;
+
