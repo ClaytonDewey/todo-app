@@ -1,16 +1,27 @@
 import React from 'react';
-import Todo from './Todo';
+import { TodoItem } from './TodoItem';
+import { useTodo } from '../context';
 
-type TodoListProps = {};
+export const TodoList = () => {
+  const { todos } = useTodo();
 
-const TodoList: React.FC<TodoListProps> = () => {
+  if (!todos.length) {
+    return (
+      <div className="todo__list">
+        <div className="todo todo__empty">
+          <h2>
+            You have nothing to do!
+          </h2>
+        </div>
+      </div>
+    )
+  }
   return (
     <div className='todo__list'>
-      <Todo />
-      <Todo />
-      <Todo />
-      <Todo />
+      <TodoItem />
+      <TodoItem />
+      <TodoItem />
+      <TodoItem />
     </div>
   );
 };
-export default TodoList;
