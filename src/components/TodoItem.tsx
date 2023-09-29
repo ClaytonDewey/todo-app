@@ -3,13 +3,10 @@ import { useEffect, useRef, useState } from 'react';
 import { useTodo } from '../context';
 import { Input } from './Input';
 import { toast } from 'react-hot-toast';
-import cn from 'classnames';
 import Button from './Button';
 import cross from '../images/icon-cross.svg';
 import styled from 'styled-components';
 import check from '../images/icon-check.svg';
-import { BsCheck2Square } from 'react-icons/bs';
-import { TbRefresh } from 'react-icons/tb';
 import { FaRegEdit } from 'react-icons/fa';
 
 const StyledStatusButton = styled.button`
