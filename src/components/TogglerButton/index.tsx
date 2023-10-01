@@ -13,10 +13,12 @@ function TogglerButton({ themeToggler }: ThemeTogglerProps) {
         {window.localStorage.getItem('theme') !== 'light' ? (
           <>
             <IconSun />
+            <span className='sr-only'>Set light mode</span>
           </>
         ) : (
           <>
             <IconMoon />
+            <span className='sr-only'>Set dark mode</span>
           </>
         )}
       </S.Icons>
