@@ -33,7 +33,7 @@ export const TodoList = () => {
   }).length;
 
   const deleteCompletedTodos = () => {
-    toast.success('This will delete completed todos');
+    toast('This will delete completed todos', { icon: '👋' });
   };
 
   if (!todos.length) {
@@ -72,7 +72,6 @@ export const TodoList = () => {
             })}
         </>
       )}
-      {display === 'done' && <p style={{ color: 'white' }}>Show completed</p>}
 
       <StyledFooter className='todo todo__footer'>
         <span className='todo__count'>{activeItemsCount} items left</span>
