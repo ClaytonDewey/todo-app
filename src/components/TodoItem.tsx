@@ -119,6 +119,7 @@ export const TodoItem = (props: { todo: Todo }) => {
           </button>
           <Button onClick={() => handleDelete(todo.id)} className='btn btn-del'>
             <img role='presentation' alt='delete' src={cross} />
+            <span className='sr-only'>Delete Todo</span>
           </Button>
         </>
       )}
