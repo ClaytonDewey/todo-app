@@ -4,6 +4,7 @@ import Button from './Button';
 import styled from 'styled-components';
 import { toast } from 'react-hot-toast';
 import { useState } from 'react';
+// import quotes from '../quotes.json';
 
 const StyledFooter = styled.footer`
   &.todo__footer {
@@ -36,11 +37,23 @@ export const TodoList = () => {
     toast('This will delete completed todos', { icon: '👋' });
   };
 
+  // const [quote, setQuote] = useState({});
+
+  // useEffect(() => {
+  //   let randomIndex = Math.floor(Math.random() * quotes.length);
+  //   setQuote(quotes[randomIndex]);
+  //   console.log(quote);
+  // }, [quote]);
+
   if (!todos.length) {
     return (
       <div className='todo__list'>
         <div className='todo todo__empty'>
           <h2>You have nothing to do!</h2>
+          <blockquote>
+            &ldquo;Wherever you are is the entry point.&rdquo; &mdash;{' '}
+            <footer>Kabir</footer>
+          </blockquote>
         </div>
       </div>
     );
