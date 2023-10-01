@@ -27,6 +27,35 @@
   &__add {
     margin-bottom: 1.6rem;
     border-radius: $radius;
+
+    form {
+      width: 100%;
+      padding-left: 2rem;
+    }
+
+    input {
+      color: white;
+      margin-left: 2rem;
+      width: 100%;
+      height: 100%;
+      border: none;
+      background-color: transparent;
+    }
+
+    &::before {
+      content: '';
+      display: grid;
+      place-content: center;
+      appearance: none;
+      background-color: transparent;
+      margin: 0;
+      font: inherit;
+      color: hsl(233, 14%, 35%);
+      height: 2rem;
+      width: 2rem;
+      border: 1px solid hsl(233, 14%, 35%);
+      border-radius: 100%;
+    }
   }
 
   &__toggle-container {
