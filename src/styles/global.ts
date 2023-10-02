@@ -66,6 +66,10 @@ const globalStyle = createGlobalStyle`
     color: ${({ theme }: GlobalThemeProps) => theme.text}
   }
 
+  input {
+    color: ${({ theme }: GlobalThemeProps) => theme.text}
+  }
+
 `;
 
 export default withTheme(globalStyle);
