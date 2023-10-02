@@ -60,6 +60,11 @@ const globalStyle = createGlobalStyle`
     color: ${({ theme }: GlobalThemeProps) => theme.text};
   }
 
+  .todo {
+    background-color: ${({ theme }: GlobalThemeProps) => theme.inputBg};
+    color: ${({ theme }: GlobalThemeProps) => theme.text}
+  }
+
 `;
 
 export default withTheme(globalStyle);
