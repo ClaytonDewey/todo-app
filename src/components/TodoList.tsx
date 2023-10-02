@@ -14,7 +14,7 @@ const StyledFooter = styled.footer`
     grid-column-gap: 1rem;
     align-items: center;
     text-align: center;
-    background-color: hsl(235, 24%, 19%);
+    /* background-color: hsl(235, 24%, 19%); */
     height: 4.8rem;
     border-radius: var(--radius);
     font-size: 1.2rem;
