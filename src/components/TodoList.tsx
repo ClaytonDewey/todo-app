@@ -1,3 +1,4 @@
+import { Todo } from '../context';
 import { TodoItem } from './TodoItem';
 import { useTodo } from '../context';
 import Button from './Button';
@@ -14,7 +15,6 @@ const StyledFooter = styled.footer`
     grid-column-gap: 1rem;
     align-items: center;
     text-align: center;
-    /* background-color: hsl(235, 24%, 19%); */
     height: 4.8rem;
     border-radius: var(--radius);
     font-size: 1.2rem;
@@ -22,7 +22,6 @@ const StyledFooter = styled.footer`
     button {
       font-size: 1.1rem;
     }
-    /* margin-top: 1.6rem; */
   }
 `;
 
@@ -33,7 +32,17 @@ export const TodoList = () => {
     return todo.status === 'undone';
   }).length;
 
-  const deleteCompletedTodos = () => {
+  const { deleteCompletedTodos } = useTodo();
+
+  const todoIds = todos.filter((todo) => {
+    if (todo.status === 'completed') {
+      return todo;
+    };
+    return null;
+  })
+
+  const handleDeleteCompleted = (todoIds: Todo[]) => {
+    deleteCompletedTodos(todoIds);
     toast('This will delete completed todos', { icon: '👋' });
   };
 
@@ -105,7 +114,7 @@ export const TodoList = () => {
             Completed
           </Button>
         </div>
-        <Button className='btn btn-text' onClick={() => deleteCompletedTodos()}>
+        <Button className='btn btn-text' onClick={() => handleDeleteCompleted(todoIds)}>
           Clear Completed
         </Button>
       </StyledFooter>
