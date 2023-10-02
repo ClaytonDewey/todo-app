@@ -34,16 +34,20 @@ export const TodoList = () => {
 
   const { deleteCompletedTodos } = useTodo();
 
-  const todoIds = todos.filter((todo) => {
+  const ids = todos.filter((todo) => {
     if (todo.status === 'completed') {
       return todo;
-    };
+    }
     return null;
-  })
+  });
 
-  const handleDeleteCompleted = (todoIds: Todo[]) => {
-    deleteCompletedTodos(todoIds);
-    toast('This will delete completed todos', { icon: '👋' });
+  const handleDeleteCompleted = (ids: Todo[]) => {
+    if (ids.length > 0) {
+      deleteCompletedTodos(ids);
+      setDisplay('all');
+    } else {
+      toast.error('You have not marked any tasks complete.');
+    }
   };
 
   // const [quote, setQuote] = useState({});
@@ -114,7 +118,9 @@ export const TodoList = () => {
             Completed
           </Button>
         </div>
-        <Button className='btn btn-text' onClick={() => handleDeleteCompleted(todoIds)}>
+        <Button
+          className='btn btn-text'
+          onClick={() => handleDeleteCompleted(ids)}>
           Clear Completed
         </Button>
       </StyledFooter>

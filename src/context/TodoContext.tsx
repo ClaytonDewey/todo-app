@@ -8,7 +8,7 @@ interface TodoContextProps {
   deleteTodo: (id: string) => void;
   editTodo: (id: string, text: string) => void;
   updateTodoStatus: (id: string) => void;
-  deleteCompletedTodos: (todoIds: Todo[]) => void;
+  deleteCompletedTodos: (ids: Todo[]) => void;
 }
 
 export interface Todo {
@@ -41,13 +41,11 @@ export const TodoProvider = (props: { children: React.ReactNode }) => {
   };
 
   // ::: DELETE COMPLETED TODOS :::
-  const deleteCompletedTodos = (todoIds: Todo[]) => {
-    console.log(todoIds);
-    // setTodos((prevTodos) => {
-    //   return prevTodos.map((todo) => {
-    //     // 
-    //   })
-    // })
+  const deleteCompletedTodos = (ids: Todo[]) => {
+    console.log(ids);
+    setTodos((prevTodos) => {
+      return prevTodos.filter((todo) => !ids.includes(todo));
+    });
   };
 
   // ::: EDIT A TODO :::
