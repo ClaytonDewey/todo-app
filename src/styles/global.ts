@@ -53,6 +53,7 @@ const globalStyle = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
     background-color: ${({ theme }: GlobalThemeProps) => theme.background};
     background-image: url(${({ theme }: GlobalThemeProps) => theme.backgroundImage});
+    font-size: 1.6rem;
   }
 
   h1 {
