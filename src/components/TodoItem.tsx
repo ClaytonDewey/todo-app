@@ -2,7 +2,7 @@ import type { Todo } from '../context';
 import { useEffect, useRef, useState } from 'react';
 import { useTodo } from '../context';
 import { Input } from './Input';
-import { toast } from 'react-hot-toast';
+// import { toast } from 'react-hot-toast';
 import Button from './Button';
 import cross from '../images/icon-cross.svg';
 import styled from 'styled-components';
@@ -67,20 +67,20 @@ export const TodoItem = (props: { todo: Todo }) => {
       editTodo(todoId, editingTodoText);
       setEditingTodoId(null);
       setEditingTodoText('');
-      toast.success('Todo updated successfully!');
+      // toast.success('Todo updated successfully!');
     } else {
-      toast.error('Todo field cannot be empty!');
+      // toast.error('Todo field cannot be empty!');
     }
   };
 
   const handleDelete = (todoId: string) => {
     deleteTodo(todoId);
-    toast.success('Todo deleted successfully!');
+    // toast.success('Todo deleted successfully!');
   };
 
   const handleStatusUpdate = (todoId: string) => {
     updateTodoStatus(todoId);
-    toast.success('Todo status updated successfully!');
+    // toast.success('Todo status updated successfully!');
   };
 
   return (
