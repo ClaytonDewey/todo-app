@@ -26,8 +26,9 @@ export const AddTodo = () => {
   };
 
   return (
-    <form onSubmit={handleSubmission}>
-      <div className='todo todo__add'>
+    <div className='todo todo__add'>
+      <div className='todo__toggle'></div>
+      <form onSubmit={handleSubmission}>
         <label htmlFor='todo' className='sr-only'>
           New Todo
         </label>
@@ -40,10 +41,8 @@ export const AddTodo = () => {
           value={input}
           onChange={(e) => setInput(e.target.value)}
         />
-        {/* <button>
-          Submit
-        </button> */}
-      </div>
-    </form>
+      </form>
+      <div></div>
+    </div>
   );
 };

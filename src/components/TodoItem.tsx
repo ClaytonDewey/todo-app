@@ -16,6 +16,7 @@ const StyledStatusButton = styled.button`
   appearance: none;
   background-color: transparent;
   margin: 0;
+  margin-left: 2rem;
   font: inherit;
   color: hsl(233, 14%, 35%);
   height: 2rem;
@@ -99,24 +100,28 @@ export const TodoItem = (props: { todo: Todo }) => {
         <>
           <StyledStatusButton
             onClick={() => handleStatusUpdate(todo.id)}
-            className={todo.status === 'undone' ? '' : 'done'}>
+            className={`todo__toggle ${
+              todo.status === 'undone' ? '' : 'done'
+            }`}>
             {todo.status === 'undone' ? (
               <span className='sr-only'>mark completed</span>
             ) : (
               <span className='sr-only'>mark undone</span>
             )}
           </StyledStatusButton>
-          <p
-            style={{
-              textDecoration:
-                todo.status === 'completed' ? 'line-through' : 'none',
-            }}>
-            {todo.text}
-          </p>
-          <button onClick={() => handleEdit(todo.id, todo.text)}>
-            <FaRegEdit />
-            Edit
-          </button>
+          <div>
+            <p
+              style={{
+                textDecoration:
+                  todo.status === 'completed' ? 'line-through' : 'none',
+              }}>
+              {todo.text}
+            </p>
+            <button onClick={() => handleEdit(todo.id, todo.text)}>
+              <FaRegEdit />
+              Edit
+            </button>
+          </div>
           <Button onClick={() => handleDelete(todo.id)} className='btn btn-del'>
             <img role='presentation' alt='delete' src={cross} />
             <span className='sr-only'>Delete Todo</span>
