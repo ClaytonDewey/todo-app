@@ -31,6 +31,9 @@ const globalStyle = createGlobalStyle`
     // Borders
     --radius: 4px;
 
+    // Transition timing
+    --transition: 200ms ease-in-out;
+
     // Font family
     --ff-sans: 'Josefin Sans';
   }

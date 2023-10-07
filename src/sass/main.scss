@@ -18,7 +18,7 @@
   &-text {
     font-weight: 700;
     color: $dark-grayish-blue;
-    transition: color 200ms ease-in-out;
+    transition: color var(--transition);
 
     &.active {
       color: $primary-color;
