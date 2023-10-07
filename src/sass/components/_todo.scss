@@ -84,4 +84,10 @@
       transition: opacity var(--transition);
     }
   }
+
+  p {
+    margin-left: 2rem;
+    display: inline;
+    width: auto;
+  }
 }
