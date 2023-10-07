@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 type HeaderProps = {
-  children: JSX.Element
+  children: JSX.Element;
 };
 
 const HeaderStyled = styled.header`
@@ -11,7 +11,7 @@ const HeaderStyled = styled.header`
   margin-bottom: 3.2rem;
 
   h1 {
-    color: var(--dark-text);
+    color: var(--light-1);
   }
 `;
 

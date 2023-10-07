@@ -7,15 +7,22 @@ type GlobalThemeProps = {
 
 const globalStyle = createGlobalStyle`
   :root {
+    // Light colors
+    --light-5: hsl(235, 19%, 35%);
+    --light-4: hsl(236, 9%, 61%);
+    --light-3: hsl(233, 11%, 84%);
+    --light-2: hsl(236, 33%, 92%);
+    --light-1: hsl(0, 0%, 98%);
+
+    // Dark colors
+    --dark-6: hsl(354, 80%, 10%);
+    --dark-5: hsl(235, 21%, 11%);
+    --dark-4: hsl(235, 24%, 19%);
+    --dark-3: hsl(237, 14%, 26%);
+    --dark-2: hsl(233, 14%, 35%);
+    --dark-1: hsl(234, 39%, 85%);
+
     --primary-color: hsl(220, 98%, 61%);
-    --light: hsl(0, 0%, 98%);
-    --very-dark-blue: hsl(235, 21%, 11%);
-    --very-dark-desaturated-blue: hsl(235, 24%, 19%);
-    --light-grayish-blue: hsl(234, 39%, 85%);
-    --lighter-grayish-blue: hsl(236, 33%, 92%);
-    --dark-grayish-blue: hsl(234, 11%, 52%);
-    --darker-grayish-blue: hsl(233, 14%, 35%);
-    --very-dark-grayish-blue: hsl(237, 14%, 26%);
 
     // Gradient
     --gradient: linear-gradient(-225deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%))
@@ -23,15 +30,6 @@ const globalStyle = createGlobalStyle`
 
     // Borders
     --radius: 4px;
-
-    //dark-mode
-    --dark-background: hsl(235, 21%, 11%);
-    --dark-text: hsl(0, 0%, 98%);
-
-    //light-mode
-    --light-background: hsl(0, 0%, 98%);
-    --light-text: #2E0509;
-
   }
 
   * {
@@ -52,7 +50,8 @@ const globalStyle = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background-color: ${({ theme }: GlobalThemeProps) => theme.background};
-    background-image: url(${({ theme }: GlobalThemeProps) => theme.backgroundImage});
+    background-image: 
+    url(${({ theme }: GlobalThemeProps) => theme.backgroundImage});
     font-size: 1.6rem;
   }
 

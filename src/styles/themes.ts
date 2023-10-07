@@ -10,14 +10,14 @@ export interface ThemeProps {
 
 export const darkTheme: ThemeProps = {
   backgroundImage: darkImg,
-  background: 'var(--dark-background)',
-  inputBg: 'var(--very-dark-desaturated-blue)',
-  text: 'var(--dark-text)',
+  background: 'var(--dark-5)',
+  inputBg: 'var(--dark-4)',
+  text: 'var(--light-1)',
 };
 
 export const lightTheme: ThemeProps = {
   backgroundImage: lightImg,
-  background: 'var(--light-background)',
-  inputBg: 'var(--lighter-grayish-blue)',
-  text: 'var(--light-text)',
+  background: 'var(--light-1)',
+  inputBg: 'var(--light-2)',
+  text: 'var(--dark-6)',
 };
