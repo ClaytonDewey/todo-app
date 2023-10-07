@@ -4,7 +4,7 @@ import GlobalStyle from './styles/global';
 import ThemeContext from './context/ThemeContext';
 import { lightTheme, darkTheme } from './styles/themes';
 import useThemeMode from './hooks/useThemeMode';
-import { AddTodo } from './components';
+import { AddTodo, Footer } from './components';
 import Header from './components/Header';
 import { TodoList } from './components';
 // import { Toaster } from 'react-hot-toast';
@@ -24,6 +24,7 @@ function App() {
           </Header>
           <AddTodo />
           <TodoList />
+          <Footer />
         </div>
       </ThemeProvider>
     </ThemeContext>
