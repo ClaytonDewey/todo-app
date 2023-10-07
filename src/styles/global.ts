@@ -52,7 +52,7 @@ const globalStyle = createGlobalStyle`
     background-color: ${({ theme }: GlobalThemeProps) => theme.background};
     background-image: 
     url(${({ theme }: GlobalThemeProps) => theme.backgroundImage});
-    font-size: 1.6rem;
+    font-size: 1.8rem;
   }
 
   h1 {
