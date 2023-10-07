@@ -2,10 +2,8 @@ import { Todo } from '../context';
 import { TodoItem } from './TodoItem';
 import { useTodo } from '../context';
 import Button from './Button';
-import styled from 'styled-components';
 import { toast } from 'react-hot-toast';
 import { useState } from 'react';
-// import quotes from '../quotes.json';
 
 export const TodoList = () => {
   const { todos } = useTodo();
@@ -31,14 +29,6 @@ export const TodoList = () => {
       toast.error('You have not marked any tasks complete.');
     }
   };
-
-  // const [quote, setQuote] = useState({});
-
-  // useEffect(() => {
-  //   let randomIndex = Math.floor(Math.random() * quotes.length);
-  //   setQuote(quotes[randomIndex]);
-  //   console.log(quote);
-  // }, [quote]);
 
   if (!todos.length) {
     return (
