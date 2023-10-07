@@ -8,6 +8,7 @@
 @import 'components/todo';
 
 @import 'layout/container';
+@import 'layout/footer';
 
 .btn {
   cursor: pointer;
@@ -17,9 +18,14 @@
   &-text {
     font-weight: 700;
     color: $dark-grayish-blue;
+    transition: color 200ms ease-in-out;
 
     &.active {
       color: $primary-color;
+    }
+
+    &:hover {
+      color: var(--light-2);
     }
   }
 
