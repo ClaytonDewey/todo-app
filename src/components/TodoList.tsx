@@ -7,24 +7,6 @@ import { toast } from 'react-hot-toast';
 import { useState } from 'react';
 // import quotes from '../quotes.json';
 
-const StyledFooter = styled.footer`
-  &.todo__footer {
-    display: grid;
-    grid-template-columns: 1fr 45% 1fr;
-    grid-template-rows: 1fr;
-    grid-column-gap: 1rem;
-    align-items: center;
-    text-align: center;
-    height: 4.8rem;
-    border-radius: var(--radius);
-    font-size: 1.2rem;
-
-    button {
-      font-size: 1.1rem;
-    }
-  }
-`;
-
 export const TodoList = () => {
   const { todos } = useTodo();
   const [display, setDisplay] = useState<string>('all');
@@ -99,7 +81,7 @@ export const TodoList = () => {
         </>
       )}
 
-      <StyledFooter className='todo todo__footer'>
+      <footer className='todo todo__footer'>
         <span className='todo__count'>{activeItemsCount} items left</span>
         <div className='todo__toggle-container'>
           <Button
@@ -123,7 +105,7 @@ export const TodoList = () => {
           onClick={() => handleDeleteCompleted(ids)}>
           Clear Completed
         </Button>
-      </StyledFooter>
+      </footer>
     </div>
   );
 };
