@@ -85,19 +85,37 @@ export const TodoItem = (props: { todo: Todo }) => {
   };
 
   return (
-    <div className='todo'>
+    <>
       {editingTodoId === todo.id ? (
         <>
-          <Input
-            ref={editInputRef}
-            type='text'
-            value={editingTodoText}
-            onChange={(e) => setEditingTodoText(e.target.value)}
-          />
-          <Button onClick={() => handleUpdate(todo.id)}>Update</Button>
+          <div className='todo'>
+            <StyledStatusButton
+              onClick={() => handleStatusUpdate(todo.id)}
+              className={`todo__toggle ${
+                todo.status === 'undone' ? '' : 'done'
+              }`}>
+              {todo.status === 'undone' ? (
+                <span className='sr-only'>mark completed</span>
+              ) : (
+                <span className='sr-only'>mark undone</span>
+              )}
+            </StyledStatusButton>
+            <form onSubmit={() => handleUpdate(todo.id)}>
+              <label htmlFor='todo' className='sr-only'>
+                Edit Todo
+              </label>
+              <Input
+                ref={editInputRef}
+                type='text'
+                value={editingTodoText}
+                onChange={(e) => setEditingTodoText(e.target.value)}
+              />
+            </form>
+            <div></div>
+          </div>
         </>
       ) : (
-        <>
+        <div className='todo'>
           <StyledStatusButton
             onClick={() => handleStatusUpdate(todo.id)}
             className={`todo__toggle ${
@@ -111,23 +129,24 @@ export const TodoItem = (props: { todo: Todo }) => {
           </StyledStatusButton>
           <div>
             <p
+              onClick={() => handleEdit(todo.id, todo.text)}
               style={{
                 textDecoration:
                   todo.status === 'completed' ? 'line-through' : 'none',
               }}>
               {todo.text}
             </p>
-            <button onClick={() => handleEdit(todo.id, todo.text)}>
+            {/* <button onClick={() => handleEdit(todo.id, todo.text)}>
               <FaRegEdit />
               Edit
-            </button>
+            </button> */}
           </div>
           <Button onClick={() => handleDelete(todo.id)} className='btn btn-del'>
             <img role='presentation' alt='delete' src={cross} />
             <span className='sr-only'>Delete Todo</span>
           </Button>
-        </>
+        </div>
       )}
-    </div>
+    </>
   );
 };
