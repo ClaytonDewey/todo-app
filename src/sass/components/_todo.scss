@@ -72,4 +72,16 @@
     align-items: center;
     justify-content: space-evenly;
   }
+
+  .btn-del {
+    opacity: 0;
+    transition: opacity var(--transition);
+  }
+
+  &:hover {
+    .btn-del {
+      opacity: 1;
+      transition: opacity var(--transition);
+    }
+  }
 }
