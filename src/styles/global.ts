@@ -30,6 +30,9 @@ const globalStyle = createGlobalStyle`
 
     // Borders
     --radius: 4px;
+
+    // Font family
+    --ff-sans: 'Josefin Sans';
   }
 
   * {
@@ -44,7 +47,7 @@ const globalStyle = createGlobalStyle`
     background-size: contain;
     background-position: top center;
     margin: 0;
-    font-family: 'Josefin Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    font-family: var(--ff-sans), -apple-system, BlinkMacSystemFont, 'Segoe UI',
       'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
       'Helvetica Neue', sans-serif;
     -webkit-font-smoothing: antialiased;
