@@ -72,7 +72,9 @@ export const TodoList = () => {
       )}
 
       <footer className='todo todo__footer'>
-        <span className='todo__count'>{activeItemsCount} items left</span>
+        <span className='todo__count'>
+          {activeItemsCount} {activeItemsCount === 1 ? 'item' : 'items'} left
+        </span>
         <div className='todo__toggle-container'>
           <Button
             className={`btn btn-text ${display === 'all' ? 'active' : ''}`}
@@ -91,7 +93,7 @@ export const TodoList = () => {
           </Button>
         </div>
         <Button
-          className='btn btn-text'
+          className='btn btn-text clear-completed'
           onClick={() => handleDeleteCompleted(ids)}>
           Clear Completed
         </Button>
