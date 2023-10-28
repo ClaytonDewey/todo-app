@@ -1,0 +1,24 @@
+.btn {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+
+  &-text {
+    font-weight: 700;
+    color: $dark-grayish-blue;
+    transition: color var(--transition);
+
+    &.active,
+    &:focus {
+      color: $primary-color;
+    }
+
+    &:hover {
+      color: var(--light-2);
+    }
+  }
+
+  &-del {
+    margin-right: 2rem;
+  }
+}

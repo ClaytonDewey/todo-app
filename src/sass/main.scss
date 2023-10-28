@@ -5,31 +5,8 @@
 @import 'base/typography';
 @import 'base/utilities';
 
+@import 'components/button';
 @import 'components/todo';
 
 @import 'layout/container';
 @import 'layout/footer';
-
-.btn {
-  cursor: pointer;
-  background-color: transparent;
-  border: none;
-
-  &-text {
-    font-weight: 700;
-    color: $dark-grayish-blue;
-    transition: color var(--transition);
-
-    &.active {
-      color: $primary-color;
-    }
-
-    &:hover {
-      color: var(--light-2);
-    }
-  }
-
-  &-del {
-    margin-right: 2rem;
-  }
-}
