@@ -133,6 +133,7 @@ export const TodoItem = (props: { todo: Todo }) => {
               style={{
                 textDecoration:
                   todo.status === 'completed' ? 'line-through' : 'none',
+                opacity: todo.status === 'completed' ? 0.5 : 1,
               }}>
               {todo.text}
             </p>
