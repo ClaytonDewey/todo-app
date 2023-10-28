@@ -7,7 +7,6 @@ import Button from './Button';
 import cross from '../images/icon-cross.svg';
 import styled from 'styled-components';
 import check from '../images/icon-check.svg';
-import { FaRegEdit } from 'react-icons/fa';
 
 const StyledStatusButton = styled.button`
   display: grid;
